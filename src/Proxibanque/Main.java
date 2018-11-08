@@ -1,3 +1,4 @@
+package Proxibanque;
 import logic.application.Banking;
 
 public class Main {
@@ -5,7 +6,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Banking bk = new Banking();
-		//bk.start();
+		bk.start();
 
 	}
 

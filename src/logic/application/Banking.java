@@ -29,7 +29,8 @@ public class Banking {
 	
 	public void start() {
 		this.loadTestData();
-	}
+		this.manageMainMenu();
+		}
 	
 	public void clientDataReader() {
 		
@@ -55,9 +56,19 @@ public class Banking {
 		;
 	}
 	public void clientRemove() {
-		
-	}
-	public void bankTransfert() {
+		this.deleteAccount();
+        this.unableCreditCard();
+    }
+    
+    public void deleteAccount() {
+        
+    }
+    
+    public void unableCreditCard() {
+        
+    }
+	
+	public void bankTransfer() {
 		
 	}
 	
@@ -74,4 +85,53 @@ public class Banking {
 		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
 		personalAdvisor.clients.add(new Client("name", "firstname", "adress", 0, "city", "tel"));
 	}
+	
+	public void manageMainMenu() {
+		this.interaction.mainMenu();
+        this.interaction.display("Entrez votre choix.");
+        String userInput = this.interaction.readData();
+        if (userInput.equals("1")) {
+            this.clientCreation();
+        }else if (userInput.equals("2")) {
+               this.manageClient();
+            } 
+		else {
+            this.interaction.display("Au revoir");
+            }
+		}
+	
+	private void manageClient() {
+        this.interaction.mainMenu2();
+        this.interaction.display("Entrez votre choix: ");
+        String userInput = this.interaction.readData();
+        if (userInput.equals("1")) {
+            this.clientDataReader();    
+        } else if (userInput.equals("2")) {
+                this.dataChange();
+                } else if (userInput.equals("3")) {
+                    this.bankTransfer();
+                    } else if (userInput.equals("4")) {
+                        this.creditSimulation();
+                        } else if (userInput.equals("5")) {
+                            this.clientRemove();
+                         } else {
+                             this.interaction.display("Au revoir");
+                         }
+        
 }
+	public void creditSimulation() {
+        this.interaction.mainMenu3();
+        this.interaction.display("Entrez votre choix: ");
+        String userInput = this.interaction.readData();
+        if (userInput.equals("1")) {
+            this.housingCreditSimulation();    
+            } else if (userInput.equals("2")) {
+                this.consumptionCreditSimulation();
+    } else {
+         this.interaction.display("Au revoir");
+         }
+    }
+	
+}
+	
+	
