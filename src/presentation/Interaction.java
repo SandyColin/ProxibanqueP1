@@ -17,5 +17,12 @@ public class Interaction {
 	public void display(String message) {
 		System.out.println(message);
 	}
+	
+	public void mainMenu() {
+		this.display("Que faire ?");
+		this.display("1. Créer un client");
+		this.display("2. Gérer un client");
+		this.display("3. Sortir du programme");
+	}
 
 }
