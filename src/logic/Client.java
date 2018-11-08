@@ -11,4 +11,16 @@ public class Client {
 	public Account currentAccount;
 	public Account savingAccount;
 	public CreditCard creditCard;
+
+	public Client(String firstname, String lastname, String adress, int zipCode, String city, int tel) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.adress = adress;
+		this.zipCode = zipCode;
+		this.city = city;
+		this.tel = tel;
+		
+	}
+	
+	
 }
