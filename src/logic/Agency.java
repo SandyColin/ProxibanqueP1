@@ -7,7 +7,7 @@ public class Agency {
 	public String id;
 	public String creationDate;
 	public BankManager bankManager;
-	public List<PersonalAdvisor> personalAdvisor;
+	public List<PersonalAdvisor> personalAdvisors;
 	
 	public Agency(String id, String creationDate) {
 		this.id = id;

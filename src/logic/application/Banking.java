@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import data.AgencyNetwork;
 import logic.Agency;
 import logic.BankManager;
+import logic.Client;
+import logic.PersonalAdvisor;
 import presentation.Interaction;
 
 public class Banking {
@@ -14,38 +16,43 @@ public class Banking {
 	
 	
 	public void loadTestData() {
-		this.agencyNetwork = new ArrayList<>();
+		this.agencyNetwork = new AgencyNetwork();
 		Agency	agency =new Agency ("81190", "02/03/1990");
 		agency.bankManager = new BankManager("SS");
-		agency.personalAdvisor = new ArrayList<>();
-		PersonalAdvisor personalAdvisor = 
+		agency.personalAdvisors = new ArrayList<>();
+		PersonalAdvisor personalAdvisor = new PersonalAdvisor("Banquier");
+		personalAdvisor.clients.add(new Client("Sarah", "Ourabah", "avenue de la Paix", 75000, "Paris", "06.07.08.09.10"));
+		agency.personalAdvisors.add(personalAdvisor);
+		this.agencyNetwork.agencies.add(agency);
+		
 	}
 	
 	public void start() {
-		
+		this.loadTestData();
 	}
 	
 	public void clientDataReader() {
 		
 	}
-	public String clientCreation() {
-		this.agencyNetwork = new AgencyNetwork();
-		//this.agencyNetwork.agency.
+	public void clientCreation() {
+		this.loadTestData();
 		this.interaction = new Interaction();
+		Client client = new Client (null, null, null, 0, null, null);
 		this.interaction.display("Entrez le nom :");
-		lastname = this.interaction.readData();
+		client.lastname = this.interaction.readData();
 		this.interaction.display("Entrez le prénom :");
-		firstname = this.interaction.readData();
+		client.firstname = this.interaction.readData();
 		this.interaction.display("Entrez l'adresse :");
-		adress = this.interaction.readData();
+		client.adress = this.interaction.readData();
 		this.interaction.display("Entrez le code postal :");
-		zipCode = this.interaction.readData();
+		client.zipCode = Integer.parseInt(this.interaction.readData());
 		this.interaction.display("Entrez la ville :");
-		city = this.interaction.readData();
+		client.city = this.interaction.readData();
 		this.interaction.display("Entrez le téléphone :");
-		tel = this.interaction.readData();
-		
-		return null;
+		client.tel = this.interaction.readData();
+		this.addClient();
+		System.out.println(client.firstname + " " + client.lastname + " habitant "+client.adress + " "+client.zipCode + " "+client.city + " et ayant pour numéro"+ client.tel + " a bien été ajouté.");
+		;
 	}
 	public void clientRemove() {
 		
@@ -64,6 +71,7 @@ public class Banking {
 		
 	}
 	public void addClient(){
-		
+		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
+		personalAdvisor.clients.add(new Client("name", "firstname", "adress", 0, "city", "tel"));
 	}
 }

@@ -7,12 +7,12 @@ public class Client {
 	public String adress;
 	public int zipCode;
 	public String city;
-	public int tel;
+	public String tel;
 	public Account currentAccount;
 	public Account savingAccount;
 	public CreditCard creditCard;
 
-	public Client(String firstname, String lastname, String adress, int zipCode, String city, int tel) {
+	public Client(String firstname, String lastname, String adress, int zipCode, String city, String tel) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.adress = adress;
