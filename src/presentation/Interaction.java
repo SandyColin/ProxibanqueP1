@@ -15,6 +15,10 @@ public class Interaction {
 		System.out.println(message);
 	}
 	
+//	public void mainMenu0() {
+//		this.display("Bonjour employé ProxiBanque, pour vous identifier, entrez votre ID () :");
+//	}
+	
 	public void mainMenu() {
 		this.display("Que faire ?");
 		this.display("1. Cr�er un client");

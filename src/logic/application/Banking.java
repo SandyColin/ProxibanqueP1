@@ -73,29 +73,29 @@ public Banking() {
 		;
 	}
 	public void clientRemove() {
-		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
-		
-		for (Client client1 : this.clients)
-		for (Iterator iter = this.clients.iterator(); iter.hasNext();)
-	      {
-	       String  ch2= (String)iter.next();
-	        System.out.println(ch2)  ;
-	      }
-				
-		this.interaction.display("Quel client souhaitez vous supprimer");
-		int saisie = Integer.parseInt(this.interaction.readData());
-		
-		if (client.currentAccount.equals(Account)) {
-		this.deleteAccount();}
-        this.unableCreditCard();
+//		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
+//		
+//		for (Client client1 : this.clients)
+//		for (Iterator iter = this.clients.iterator(); iter.hasNext();)
+//	      {
+//	       String  ch2= (String)iter.next();
+//	        System.out.println(ch2)  ;
+//	      }
+//				
+//		this.interaction.display("Quel client souhaitez vous supprimer");
+//		int saisie = Integer.parseInt(this.interaction.readData());
+//		
+//		if (client.currentAccount.equals(Account)) {
+//		this.deleteAccount();}
+//        this.unableCreditCard();
     }
     
     public void deleteAccount() {
-        Map <cl�, Client> delete = new HashMap<>();
-        
-		client.lastname = this.interaction.readData();
-		
-		client.firstname = this.interaction.readData();
+//        Map <cl�, Client> delete = new HashMap<>();
+//        
+//		client.lastname = this.interaction.readData();
+//		
+//		client.firstname = this.interaction.readData();
     }
     
     public void unableCreditCard() {
@@ -141,7 +141,7 @@ public Banking() {
 		List<Client> clients = this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients;
 		for (Client client : clients) {
 			int index = clients.indexOf(client);
-			this.interaction.display(index + " - "+ client);}
+			this.interaction.display(index + " - "+ client.toString());}
 		this.interaction.display("Tapez le numéro associé au client concerné");
 	    String userInputIndex = this.interaction.readData();	
 		
@@ -176,8 +176,8 @@ public Banking() {
             this.housingCreditSimulation();    
             } else if (userInput.equals("2")) {
                 this.consumptionCreditSimulation();
-            } else if (userInput.equals("3")) {
-                this.manageClient();
+//            } else if (userInput.equals("3")) {
+//                this.manageClient();
             } else if (userInput.equals("4")) {
      			this.exitProgram();
          }

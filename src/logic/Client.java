@@ -27,4 +27,15 @@ public class Client {
 		this.currentAccount = new Account(null);
 	}
 	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.firstname);
+		sb.append(" ");
+		sb.append(this.lastname);
+		sb.append(" ");
+		sb.append(this.tel);
+		return sb.toString();
+	}
+
+	
 }
