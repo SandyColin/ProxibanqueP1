@@ -90,27 +90,28 @@ public Banking() {
 		switch (modif)
 		{
 			case "1" : 
-				this.interaction.display("Quelle est le nouveau prï¿½nom ï¿½ entrer ?");
+				this.interaction.display("Quelle est le nouveau prénom à entrer ?");
 				String newFirstname = this.interaction.readData();
+				this.client = Client (this.client.newFirstname,this.client.lastname,this.client.adress,this.client.zipCode,this.client.city,this.client.tel);
             break;
 			case "2" : 
-				this.interaction.display("Quelle est le nouveau nom ï¿½ entrer ?");
+				this.interaction.display("Quelle est le nouveau nom à entrer ?");
 				String newName = this.interaction.readData();
             break; 
 			case "3" :
-				this.interaction.display("Quelle est la nouvelle adresse ï¿½ entrer ?");
+				this.interaction.display("Quelle est la nouvelle adresse à entrer ?");
 				String newAdress = this.interaction.readData();
             break;
 			case "4":
-				this.interaction.display("Quelle est le nouveau code postal ï¿½ entrer ?");
+				this.interaction.display("Quelle est le nouveau code postal à entrer ?");
 				String newZipCode = this.interaction.readData();
             break;
 			case "5" :
-				this.interaction.display("Quelle est la nouvelle ville ï¿½ entrer ?");
+				this.interaction.display("Quelle est la nouvelle ville à entrer ?");
 				String newCity = this.interaction.readData();
             break;
 			case "6" :
-				this.interaction.display("Quelle est le nouveau tï¿½lï¿½phone ï¿½ entrer ?");
+				this.interaction.display("Quelle est le nouveau téléphone à entrer ?");
 				String newTel = this.interaction.readData();
             break;
 			case "7" :
@@ -121,6 +122,8 @@ public Banking() {
 	}
 		
 	
+	
+
 	public void consumptionCreditSimulation() {
 		
 	}
