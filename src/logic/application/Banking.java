@@ -1,6 +1,9 @@
 package logic.application;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import data.AgencyNetwork;
 import logic.Agency;
@@ -16,20 +19,27 @@ public class Banking {
 	
 	
 	public void loadTestData() {
+		//this.agencyNetwork = new AgencyNetwork();
+		//Agency	agency =new Agency ("81190", "02/03/1990");
+		//agency.bankManager = new BankManager("SS");
+		//agency.personalAdvisors = new ArrayList<>();
+		//PersonalAdvisor personalAdvisor = new PersonalAdvisor("Banquier");
+		//personalAdvisor.clients.add(new Client("Sarah", "Ourabah", "avenue de la Paix", 75000, "Paris", "06.07.08.09.10"));
+		//agency.personalAdvisors.add(personalAdvisor);
+		//this.agencyNetwork.agencies.add(agency);
+		
 		this.agencyNetwork = new AgencyNetwork();
-		Agency	agency =new Agency ("81190", "02/03/1990");
-		agency.bankManager = new BankManager("SS");
-		agency.personalAdvisors = new ArrayList<>();
-		PersonalAdvisor personalAdvisor = new PersonalAdvisor("Banquier");
-		personalAdvisor.clients.add(new Client("Sarah", "Ourabah", "avenue de la Paix", 75000, "Paris", "06.07.08.09.10"));
-		agency.personalAdvisors.add(personalAdvisor);
-		this.agencyNetwork.agencies.add(agency);
+		this.agencyNetwork.agencies.add(new Agency ("81190", "02/03/1990"));
+		this.agencyNetwork.agencies.get(0).personalAdvisors.add(new PersonalAdvisor("Banquier"));
+		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sarah", "Ourabah", "avenue de la Paix", 75000, "Paris", "06.07.08.09.10"));
 		
 	}
 	
 	public void start() {
 		this.loadTestData();
+		while (this.running) {
 		this.manageMainMenu();
+		}
 		}
 	
 	public void clientDataReader() {
@@ -38,30 +48,50 @@ public class Banking {
 	public void clientCreation() {
 		this.loadTestData();
 		this.interaction = new Interaction();
-		Client client = new Client (null, null, null, 0, null, null);
+		
 		this.interaction.display("Entrez le nom :");
-		client.lastname = this.interaction.readData();
+		String lastname = this.interaction.readData();
 		this.interaction.display("Entrez le prénom :");
-		client.firstname = this.interaction.readData();
+		String firstname = this.interaction.readData();
 		this.interaction.display("Entrez l'adresse :");
-		client.adress = this.interaction.readData();
+		String adress = this.interaction.readData();
 		this.interaction.display("Entrez le code postal :");
-		client.zipCode = Integer.parseInt(this.interaction.readData());
+		int zipCode = Integer.parseInt(this.interaction.readData());
 		this.interaction.display("Entrez la ville :");
-		client.city = this.interaction.readData();
+		String city = this.interaction.readData();
 		this.interaction.display("Entrez le téléphone :");
-		client.tel = this.interaction.readData();
-		this.addClient();
-		System.out.println(client.firstname + " " + client.lastname + " habitant "+client.adress + " "+client.zipCode + " "+client.city + " et ayant pour numéro"+ client.tel + " a bien été ajouté.");
+		String tel = this.interaction.readData();
+		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
+		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client(lastname, firstname, adress, zipCode, city, tel));
+		System.out.println(firstname + " " + lastname + " habitant "+adress + " "+zipCode + " "+city + " et ayant pour numéro"+ tel + " a bien été ajouté.");
 		;
 	}
 	public void clientRemove() {
-		this.deleteAccount();
+		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
+		
+		for (Client client1 : this.clients)
+		for (Iterator iter = this.clients.iterator(); iter.hasNext();)
+	      {
+	       String  ch2= (String)iter.next();
+	        System.out.println(ch2)  ;
+	      }
+		
+		Interaction interaction = new Interaction();
+		
+		this.interaction.display("Quel client souhaitez vous supprimer");
+		int saisie = Integer.parseInt(this.interaction.readData());
+		
+		if (client.currentAccount.equals(Account)) {
+		this.deleteAccount();}
         this.unableCreditCard();
     }
     
     public void deleteAccount() {
+        Map <clé, Client> delete = new HashMap<>();
         
+		client.lastname = this.interaction.readData();
+		
+		client.firstname = this.interaction.readData();
     }
     
     public void unableCreditCard() {
@@ -81,10 +111,7 @@ public class Banking {
 	public void consumptionCreditSimulation() {
 		
 	}
-	public void addClient(){
-		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
-		personalAdvisor.clients.add(new Client("name", "firstname", "adress", 0, "city", "tel"));
-	}
+	
 	
 	public void manageMainMenu() {
 		this.interaction = new Interaction();

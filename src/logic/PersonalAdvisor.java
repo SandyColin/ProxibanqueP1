@@ -28,9 +28,9 @@ public class PersonalAdvisor {
 		this.clients.add(new Client("Jean","Fini","rue St 24",93800, "Villetaneuse", "032648972"));
 		this.clients.add(new Client("Jean","Part","rue Marc",93450, "Epinay", "032648972"));
 		this.clients.add(new Client("Jean","Bon","rue St Leu",93800, "Epinay", "032848972"));
-		
-		
+			
 		
 	}
+	
 
 }

@@ -21,6 +21,10 @@ public class Client {
 		this.tel = tel;
 		
 	}
-	
+	public Client (String firstname, String lastname, Account currentAccount) {
+		this.firstname= firstname;
+		this.lastname = lastname;
+		this.currentAccount = new Account(null);
+	}
 	
 }
