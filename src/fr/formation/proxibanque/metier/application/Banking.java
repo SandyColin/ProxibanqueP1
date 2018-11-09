@@ -28,13 +28,13 @@ public Banking() {
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sarah", "Ourabah",
 				 "avenue de la Paix", 75000, "Paris", "06.07.08.09.10", "C01", "S01"));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sandy","Colin",
-				"rue St Marc",93800, "Epinay", "032648972", "C02", "S02"));
+				"rue St Marc",93800, "Epinay", "03.26.48.97.21", "C02", "S02"));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sylvie","Ritter",
-				"rue St 24",93430, "Villetaneuse", "032648972", "C03", "S03"));
+				"rue St 24",93430, "Villetaneuse", "03.26.48.97.22", "C03", "S03"));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Marc","Part",
-				"rue Marc",95600, "Eaubonne", "032648972", "C04", "S04"));
+				"rue Marc",95600, "Eaubonne", "03.26.48.97.21", "C04", "S04"));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Jean","Bon",
-				"rue St Leu",95560, "Baillet-en-France", "032848972", "C05", "S05"));
+				"rue St Leu",95560, "Baillet-en-France", "03.28.48.97.25", "C05", "S05"));
 	}
 	
 	public void start() {
