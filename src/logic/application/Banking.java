@@ -71,19 +71,7 @@ public class Banking {
 		;
 	}
 	public void clientRemove() {
-		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
 		
-		for (Client client1 : this.clients)
-		for (Iterator iter = this.clients.iterator(); iter.hasNext();)
-	      {
-	       String  ch2= (String)iter.next();
-	        System.out.println(ch2)  ;
-	      }
-		
-		Interaction interaction = new Interaction();
-		
-		this.interaction.display("Quel client souhaitez vous supprimer");
-		int saisie = Integer.parseInt(this.interaction.readData());
 		
 		if (client.currentAccount.equals(Account)) {
 		this.deleteAccount();}
