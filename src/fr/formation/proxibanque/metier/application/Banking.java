@@ -103,7 +103,7 @@ public Banking() {
 			case "1" : 
 				this.interaction.display("Quelle est le nouveau prénom à entrer ?");
 				String newFirstname = this.interaction.readData();
-				this.client = Client (this.client.newFirstname,this.client.lastname,this.client.adress,this.client.zipCode,this.client.city,this.client.tel);
+				this.client = Client (newFirstname,this.client.lastname,this.client.adress,this.client.zipCode,this.client.city,this.client.tel);
             break;
 			case "2" : 
 				this.interaction.display("Quelle est le nouveau nom à entrer ?");
