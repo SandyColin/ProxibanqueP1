@@ -16,6 +16,11 @@ public class Client {
 	public Account savingAccount;
 	public CreditCard creditCard;
 
+	/**
+	 * Constructeur de la classe Client
+	 * @param firstname Prénom du client
+	 * @param
+	 */ 
 	public Client(String firstname, String lastname, String adress, int zipCode, String city, 
 			String tel, String currentAccount, String savingAccount) {
 		this.firstname = firstname;
@@ -28,14 +33,11 @@ public class Client {
 		this.savingAccount = new Account();
 
 	}
-	public Client (String firstname, String lastname, Account currentAccount, Account savingAccount) {
-		this.firstname= firstname;
-		this.lastname = lastname;
-		this.currentAccount = new Account();
-		this.savingAccount = new Account();
-		
-	}
 	
+	/**
+	 * Méthode toString permettant de redéfinir la méthode par défaut de Java
+	 * @return String une chaine de caractères
+	 */
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.firstname);

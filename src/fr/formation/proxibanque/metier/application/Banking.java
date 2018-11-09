@@ -8,7 +8,12 @@ import fr.formation.proxibanque.metier.CurrentAccount;
 import fr.formation.proxibanque.metier.PersonalAdvisor;
 import fr.formation.proxibanque.persistence.AgencyNetwork;
 import fr.formation.proxibanque.presentation.Interaction;
-
+/**
+ * Classe qui intéragit avec toutes les autres classes et qui contient les méthodes permettant
+ *  au conseiller de faire tous les traitements qu'il souhaite
+ * @author Adminl (Sarah Ourabah et Sandy Colin)
+ *
+ */
 public class Banking {
 
 	public Interaction interaction ;
@@ -17,12 +22,19 @@ public class Banking {
 	public Client client;
 	public CurrentAccount currentAccount;
 	
-	
+	/**
+	 * Constructeur par défaut de la classe Banking
+	 */ 	
 public Banking() {
 	this.interaction = new Interaction();
 	this.agencyNetwork = new AgencyNetwork();
 }
 	
+/**
+ * Méthode permettant au conseiller de supprimer un client et toutes ses caractéristiques
+ *
+ *
+ */ 
 	public void loadTestData() {
 		
 		this.agencyNetwork.agencies.add(new Agency ("81190", "02/03/1990"));
@@ -39,6 +51,11 @@ public Banking() {
 				"rue St Leu",95560, "Baillet-en-France", "03.28.48.97.25", "C05", "S05"));
 	}
 	
+	/**
+	 * Méthode permettant de lancer le programme et de n'en sortir que lorsque le conseiller l'a décidé
+	 *
+	 *
+	 */ 
 	public void start() {
 		this.loadTestData();
 		while (this.running) {
@@ -46,6 +63,11 @@ public Banking() {
 		}
 	}
 	
+	/**
+	 * Méthode permettant au conseiller de lire les informations d'un client précis
+	 *
+	 *
+	 */ 
 	public void clientDataReader() {
 		this.interaction.display(this.client.firstname);
 		this.interaction.display(this.client.lastname);
@@ -56,6 +78,11 @@ public Banking() {
 		this.interaction.display(String.valueOf(this.client.currentAccount));
 		this.interaction.display(String.valueOf(this.client.savingAccount));
 	}
+	
+	/**
+	 * Méthode permettant au conseiller de supprimer un client et toutes ses caractéristiques
+	 *
+	 */ 
 	public void clientCreation() {
 		
 		this.interaction.display("Entrez le nom :");
@@ -81,6 +108,11 @@ public Banking() {
 				+ currentAccount + " " + savingAccount);
 		;
 	}
+	/**
+	 * Méthode permettant au conseiller de supprimer un client et toutes ses caractéristiques
+	 * 
+	 *
+	 */ 
 	public void clientRemove() {
 
 		PersonalAdvisor personalAdvisor = this.agencyNetwork.agencies.get(0).personalAdvisors.get(0);
@@ -102,9 +134,20 @@ public Banking() {
 		
 	}
 	
+	/**
+	 * Méthode censée permettre au conseiller de simuler un crédit de consumption
+	 * 
+	 *
+	 */ 
 	public void housingCreditSimulation() {
-		this.interaction.display("Dï¿½solï¿½es Jï¿½rï¿½my, c'est trop pour nous !!!");
+		this.interaction.display("Sélectionner le montant de crédit souhaité");
+		this.interaction.readData();
+		this.interaction.display("Désolé vous ne remplissez pas les conditions requises");
 	}
+	/**
+	 * Méthode permettant au conseiller de changer une caractéristique du client
+	 *
+	 */ 
 	public void dataChange() {
 		this.interaction.changeMenu();
 		String modif = this.interaction.readData();
@@ -155,11 +198,21 @@ public Banking() {
 		
 	
 	
-
+	/**
+	 * Méthode censée permettre au conseiller de simuler un crédit de consumption
+	 *
+	 */ 
 	public void consumptionCreditSimulation() {
-		this.interaction.display("Dï¿½solï¿½es Jï¿½rï¿½my, c'est trop pour nous !!!");
+		this.interaction.display("Sélectionner le montant de crédit souhaité");
+		this.interaction.readData();
+		this.interaction.display("Désolé vous ne remplissez pas les conditions requises");
 	}
 		
+	/**
+	 * Méthode permettant d'afficher au conseiller un menu principal lui permettant de faire divers traitements (créer ou gérer un client)
+	 *
+	 *
+	 */ 
 	public void manageMainMenu() {
 		this.interaction.mainMenu();
         this.interaction.display("Entrez votre choix.");
@@ -174,9 +227,19 @@ public Banking() {
             }
 		}
 	
+	/**
+	 * Méthode permettant de quitter le programme
+	 *
+	 */ 
 	public void exitProgram() {
 		this.running = false;
 	}
+	
+	/**
+	 * Méthode permettant d'afficher une liste de client qui sont identifiés par un index.
+	 *
+	 *
+	 */ 
 	public void displayListClient() {
 		PersonalAdvisor personalAdvisor = this.agencyNetwork.agencies.get(0).personalAdvisors.get(0);
 		List<Client> clients = personalAdvisor.clients;
@@ -188,6 +251,10 @@ public Banking() {
 	    int userInputIndex = Integer.parseInt(this.interaction.readData());
 	    this.client = clients.get(userInputIndex);
 	}
+	/**
+	 * Méthode permettant au conseiller de choisir quel traitement il souhaite faire pour un client qu'il aura choisi dans la liste
+	 *
+	 */ 
 	public void selectClient() { 
 		this.displayListClient();
 		this.interaction.mainMenu2();
@@ -210,7 +277,11 @@ public Banking() {
 	                      }
 		}
 	
-        
+	/**
+	 * Méthode permettant au conseiller de choisir entre 2 types de simulation de crédit
+	 *
+	 *
+	 */     
 	public void creditSimulation() {
         this.interaction.mainMenu3();
         this.interaction.display("Entrez votre choix: ");
