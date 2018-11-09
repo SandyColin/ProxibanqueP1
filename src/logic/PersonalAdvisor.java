@@ -23,16 +23,6 @@ public class PersonalAdvisor {
 	}
 	
 	
-	private void nextClient() {
-			for (this.currentClient = 0; currentClient < clients.size(); currentClient++) {
-			this.nextClient();}
-				this.clientSheet.put("1.", personalAdvisor.clients.get(0));
-				this.clientSheet.put("2.", question.answers.get(1));
-				this.clientSheet.put("3.", question.answers.get(2));
-				this.clientSheet.put("4.", question.answers.get(3));	
-	}
-	
-	
 	public PersonalAdvisor (String id, List<Client> clients) {
 		this(id);
 		this.clients = clients;
