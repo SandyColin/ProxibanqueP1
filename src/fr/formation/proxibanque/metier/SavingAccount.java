@@ -8,7 +8,10 @@ package fr.formation.proxibanque.metier;
 public class SavingAccount extends Account{
 	
 	public int INTEREST_CASE = 3/100;
-
+	/**
+	 * Constructeur par défaut de SavingAccount
+	 *
+	 */
 	public SavingAccount() {
 		super();
 	}

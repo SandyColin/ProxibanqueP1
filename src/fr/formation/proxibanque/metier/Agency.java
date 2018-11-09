@@ -15,6 +15,10 @@ public class Agency {
 	public BankManager bankManager;
 	public List<PersonalAdvisor> personalAdvisors;
 	
+	/**
+	 * Constructeur de Agency
+	 *
+	 */
 	public Agency(String id, String creationDate) {
 		this.id = id;
 		this.creationDate = creationDate;

@@ -2,28 +2,38 @@ package fr.formation.proxibanque.metier.application;
 
 import java.util.List;
 
-import fr.formation.proxibanque.metier.Account;
+
 import fr.formation.proxibanque.metier.Agency;
 import fr.formation.proxibanque.metier.Client;
-import fr.formation.proxibanque.metier.CurrentAccount;
+
 import fr.formation.proxibanque.metier.PersonalAdvisor;
 import fr.formation.proxibanque.persistence.AgencyNetwork;
 import fr.formation.proxibanque.presentation.Interaction;
-
+/**
+ * Classe regroupant toutes les méthodes permettant d'exécuter tous les traitements possibles
+ * @author Adminl (Sarah Ourabah et Sandy Colin)
+ *
+ */
 public class Banking {
 
 	public Interaction interaction ;
 	public AgencyNetwork agencyNetwork;
 	public boolean running = true;
 	public Client client;
-//	public CurrentAccount currentAccount;
 	
 	
+	/**
+	 * Constructeur par défaut de la classe Banking
+	 *
+	 */	
 public Banking() {
 	this.interaction = new Interaction();
 	this.agencyNetwork = new AgencyNetwork();
 }
-	
+/**
+ * Méthode permettant la création d'une agence, d'un conseiller et de plusieurs clients
+ *
+ */	
 	public void loadTestData() {
 		
 		this.agencyNetwork.agencies.add(new Agency ("81190", "02/03/1990"));
@@ -39,14 +49,20 @@ public Banking() {
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Jean","Bon",
 				"rue St Leu",95560, "Baillet-en-France", "03.28.48.97.25"));
 	}
-	
+	/**
+	 * Méthode permettant le lancement et le bon déroulement de l'application
+	 *
+	 */
 	public void start() {
 		this.loadTestData();
 		while (this.running) {
 		this.manageMainMenu();
 		}
 	}
-	
+	/**
+	 * Méthode permettant de lire les informations concernant un client en particulier
+	 *
+	 */
 	public void clientDataReader() {
 		this.interaction.display(this.client.firstname);
 		this.interaction.display(this.client.lastname);
@@ -55,6 +71,10 @@ public Banking() {
 		this.interaction.display(this.client.city);
 		this.interaction.display(this.client.tel);
 	}
+	/**
+	 * Méthode permettant la création d'un nouveau client avec toutes ses caractéristiques
+	 *
+	 */
 	public void clientCreation() {
 		
 		this.interaction.display("Entrez le nom :");
@@ -70,20 +90,17 @@ public Banking() {
 		this.interaction.display("Entrez le tï¿½lï¿½phone :");
 		String tel = this.interaction.readData();
 		this.interaction.display("Entrez le numÃ©ro de compte courant:");
-//		String currentAccount = this.interaction.readData();
-//		this.interaction.display("Entrez le solde du compte courant:");
-//		Double balanceCurrentAccount = Double.parseDouble(this.interaction.readData());
-//		this.interaction.display("Entrez le numÃ©ro de compte Ã©pargne:");
-//		String savingAccount = this.interaction.readData();
-//		this.interaction.display("Entrez le solde du compte Ã©pargne:");
-//		Double balanceSavingAccount = Double.parseDouble(this.interaction.readData());
+
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client
 				(lastname, firstname, adress, zipCode, city, tel));
 		this.interaction.display(firstname + " " + lastname + " habitant "+adress + " "+zipCode + " "+city + 
-				" ayant pour numï¿½ro"+ tel + ". " +" a bien ï¿½tï¿½ ajoutï¿½." + "\nNumÃ©ro de comptes associÃ©s: " 
-				+ currentAccount + " (solde: " + balanceCurrentAccount + "â‚¬)" + savingAccount + " (solde: " + balanceSavingAccount);
+				" ayant pour numï¿½ro"+ tel + ". " +" a bien ï¿½tï¿½ ajoutï¿½.");
 		;
 	}
+	/**
+	 * Méthode permettant la suppression d'un client et de toutes ses caractéristiques
+	 *
+	 */
 	public void clientRemove() {
 
 		PersonalAdvisor personalAdvisor = this.agencyNetwork.agencies.get(0).personalAdvisors.get(0);
@@ -99,15 +116,27 @@ public Banking() {
 		
     }
     
+	/**
+	 * Méthode censée permettre de faire des virements d'un compte à l'autre
+	 *
+	 */
 	public void bankTransfer() {
-		this.interaction.display("Les comptes associÃ©s au client sÃ©lectionnÃ© sont les suivants:");
-		this.interaction.display(this.client.currentAccount.accountNumber);
+		this.interaction.display("Désolées Jérémy, nous avons essayé mais sans succès");
+		
 		
 	}
 	
+	/**
+	 * Méthode censée permettre de simuler un crédit
+	 *
+	 */
 	public void housingCreditSimulation() {
 		this.interaction.display("Dï¿½solï¿½es Jï¿½rï¿½my, c'est trop pour nous !!!");
 	}
+	/**
+	 * Méthode permettant de changer une caractéristique d'un client donné
+	 *
+	 */
 	public void dataChange() {
 		this.interaction.changeMenu();
 		String modif = this.interaction.readData();
@@ -158,11 +187,18 @@ public Banking() {
 		
 	
 	
-
+	/**
+	 * Méthode censée permettre de simuler un crédit
+	 *
+	 */
 	public void consumptionCreditSimulation() {
 		this.interaction.display("Dï¿½solï¿½es Jï¿½rï¿½my, c'est trop pour nous !!!");
 	}
 		
+	/**
+	 * Méthode affichant le menu principal dans lequel il faut faire un choix
+	 *
+	 */
 	public void manageMainMenu() {
 		this.interaction.mainMenu();
         this.interaction.display("Entrez votre choix.");
@@ -177,9 +213,17 @@ public Banking() {
             }
 		}
 	
+	/**
+	 * Méthode permettant de sortir du programme
+	 *
+	 */
 	public void exitProgram() {
 		this.running = false;
 	}
+	/**
+	 * Méthode affichant la liste des clients associés au conseiller
+	 *
+	 */
 	public void displayListClient() {
 		PersonalAdvisor personalAdvisor = this.agencyNetwork.agencies.get(0).personalAdvisors.get(0);
 		List<Client> clients = personalAdvisor.clients;
@@ -191,6 +235,10 @@ public Banking() {
 	    int userInputIndex = Integer.parseInt(this.interaction.readData());
 	    this.client = clients.get(userInputIndex);
 	}
+	/**
+	 * Méthode affichant un menu principal dans lequel il faut faire un choix par rapport au client
+	 *
+	 */
 	public void selectClient() { 
 		this.displayListClient();
 		this.interaction.mainMenu2();
@@ -213,7 +261,10 @@ public Banking() {
 	                      }
 		}
 	
-        
+	/**
+	 * Méthode affichant un menu dans lequel il faut faire un choix par rapport au crédit.
+	 *
+	 */  
 	public void creditSimulation() {
         this.interaction.mainMenu3();
         this.interaction.display("Entrez votre choix: ");

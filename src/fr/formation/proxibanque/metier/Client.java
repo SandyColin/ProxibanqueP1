@@ -14,20 +14,18 @@ public class Client {
 	public String tel;
 	public Account Account;
 	public CreditCard creditCard;
-	public double balanceCurrentAccount;
-	public double balanceSavingAccount;
+	
 
 	/**
-	 * @param firstname
-	 * @param lastname
-	 * @param adress
-	 * @param zipCode
-	 * @param city
-	 * @param tel
-	 * @param currentAccount
-	 * @param balanceCurrentAccount
-	 * @param savingAccount
-	 * @param balanceSavingAccount
+	 * Constructeur de la classe Client
+	 * @param firstname Prénom du client
+	 * @param lastname Nom du client
+	 * @param adress Adresse du client
+	 * @param zipCode Code Postal du client
+	 * @param city Ville du client
+	 * @param tel Téléphone du client
+	 * 
+	 * 
 	 */
 
 	public Client(String firstname, String lastname, String adress, int zipCode, String city, 
@@ -40,11 +38,8 @@ public class Client {
 		this.tel = tel;
 
 		Account = new Account();
-
-	}
-	
-		this.currentAccount = new Account();
-		this.savingAccount = new Account();
+		//this.currentAccount = new Account();
+		//this.savingAccount = new Account();
 
 	}
 	

@@ -12,18 +12,17 @@ public class Interaction {
 	/**
 	 * La méthode readData() de type String permet de lire et de retourner les entrées clavier 
 	 * 
-	 * @author Adminl (Sarah Ourabah et Sandy Colin)
 	 *
 	 */
 	public String readData() {   
 		Scanner sc = new Scanner (System.in);
 		return sc.nextLine();
+		
 	}
 	
 	/**
-	 * La méthode display() affiche dans la console un paramètre de type String et ne retourne aucune valeur.
+	 * La méthode display() affiche un message sur la console.
 	 * 
-	 * @author Adminl (Sarah Ourabah et Sandy Colin)
 	 *
 	 */
 	public void display(String message) {
@@ -34,9 +33,9 @@ public class Interaction {
 //		this.display("Bonjour employé ProxiBanque, pour vous identifier, entrez votre ID () :");
 //	}
 	/**
-	 * La mainMenu() affiche dans la console un paramètre de type String et ne retourne aucune valeur.
+	 * La mainMenu() affiche dans la console une liste d'instruction.
 	 * 
-	 * @author Adminl (Sarah Ourabah et Sandy Colin)
+	 * 
 	 *
 	 */
 	public void mainMenu() {
@@ -46,6 +45,11 @@ public class Interaction {
 		this.display("3. Sortir du programme");
 	}
 	
+	/**
+	 * La méthode mainMenu2() affiche dans la console une liste d'instruction et permet au conseiller de faire un choix.
+	 * 
+	 *
+	 */
 	public void mainMenu2() {
 	        this.display("1. Lire les donn�es du client");
 	        this.display("2. Modifier les donn�es d'un client");
@@ -56,13 +60,22 @@ public class Interaction {
 	        this.display("7. Sortir du programme");
 	}
 	
-	public void mainMenu3() {
+	/**
+	 * La méthode mainMenu3() affiche dans la console une liste d'instruction et permet au conseiller de faire un choix.
+	 * 
+	 *
+	 */public void mainMenu3() {
         this.display("Que faire ?");
         this.display("1. Simuler un cr�dit immobilier");
         this.display("2. Simuler un cr�dit � la consommation");
         this.display("3. Revenir au menu pr�c�dent");
         this.display("4. Sortir du programme");
     }
+	 /**
+		 * La méthode changeMenu() permet de changer la valeur d'un attribut du client
+		 * 
+		 *
+		 */
 	public void changeMenu() {
         this.display("Que voulez-vous modifier ?");
         this.display("1. Pr�nom");

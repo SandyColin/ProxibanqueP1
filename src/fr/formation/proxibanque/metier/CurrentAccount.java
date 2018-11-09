@@ -9,6 +9,10 @@ public class CurrentAccount extends Account{
 	
 	public int OVERDRAFT_PROTECTION = 1000;
 	
+	/**
+	 * Constructeur par défaut de CurrentAccount
+	 *
+	 */
 	public CurrentAccount() {
 		super();
 	}
