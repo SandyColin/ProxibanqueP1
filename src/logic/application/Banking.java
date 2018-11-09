@@ -13,6 +13,8 @@ public class Banking {
 
 	public Interaction interaction ;
 	public AgencyNetwork agencyNetwork;
+	public boolean running = true;
+	
 	
 	
 	public void loadTestData() {
@@ -41,7 +43,7 @@ public class Banking {
 		Client client = new Client (null, null, null, 0, null, null);
 		this.interaction.display("Entrez le nom :");
 		client.lastname = this.interaction.readData();
-		this.interaction.display("Entrez le prénom :");
+		this.interaction.display("Entrez le prï¿½nom :");
 		client.firstname = this.interaction.readData();
 		this.interaction.display("Entrez l'adresse :");
 		client.adress = this.interaction.readData();
@@ -49,10 +51,10 @@ public class Banking {
 		client.zipCode = Integer.parseInt(this.interaction.readData());
 		this.interaction.display("Entrez la ville :");
 		client.city = this.interaction.readData();
-		this.interaction.display("Entrez le téléphone :");
+		this.interaction.display("Entrez le tï¿½lï¿½phone :");
 		client.tel = this.interaction.readData();
 		this.addClient();
-		System.out.println(client.firstname + " " + client.lastname + " habitant "+client.adress + " "+client.zipCode + " "+client.city + " et ayant pour numéro"+ client.tel + " a bien été ajouté.");
+		System.out.println(client.firstname + " " + client.lastname + " habitant "+client.adress + " "+client.zipCode + " "+client.city + " et ayant pour numï¿½ro"+ client.tel + " a bien ï¿½tï¿½ ajoutï¿½.");
 		;
 	}
 	public void clientRemove() {
@@ -96,11 +98,15 @@ public class Banking {
         }else if (userInput.equals("2")) {
                this.manageClient();
             } 
-		else {
-            this.interaction.display("Au revoir");
+		else if (userInput.equals("3")) {
+			this.exitProgram();
             }
 		}
 	
+	public void exitProgram() {
+		this.running = false;
+	}
+
 	private void manageClient() {
         this.interaction.mainMenu2();
         this.interaction.display("Entrez votre choix: ");
@@ -115,8 +121,10 @@ public class Banking {
                         this.creditSimulation();
                         } else if (userInput.equals("5")) {
                             this.clientRemove();
-                         } else {
-                             this.interaction.display("Au revoir");
+                         } else if (userInput.equals("6")) {
+                        	 this.manageMainMenu();
+                         } else if (userInput.equals("7")) {
+                     			this.exitProgram();
                          }
         
 }
@@ -128,8 +136,10 @@ public class Banking {
             this.housingCreditSimulation();    
             } else if (userInput.equals("2")) {
                 this.consumptionCreditSimulation();
-    } else {
-         this.interaction.display("Au revoir");
+            } else if (userInput.equals("3")) {
+                this.manageClient();
+            } else if (userInput.equals("4")) {
+     			this.exitProgram();
          }
     }
 	
