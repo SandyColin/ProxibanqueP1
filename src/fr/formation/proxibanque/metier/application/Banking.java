@@ -45,7 +45,14 @@ public Banking() {
 	}
 	
 	public void clientDataReader() {
-		
+		this.interaction.display(this.client.firstname);
+		this.interaction.display(this.client.lastname);
+		this.interaction.display(this.client.adress);
+		this.interaction.display(String.valueOf(this.client.zipCode));
+		this.interaction.display(this.client.city);
+		this.interaction.display(this.client.tel);
+		this.interaction.display(String.valueOf(this.client.currentAccount));
+		this.interaction.display(String.valueOf(this.client.savingAccount));
 	}
 	public void clientCreation() {
 		
@@ -93,7 +100,7 @@ public Banking() {
 	}
 	
 	public void housingCreditSimulation() {
-		
+		this.interaction.display("Désolées Jérémy, c'est trop pour nous !!!");
 	}
 	public void dataChange() {
 		this.interaction.changeMenu3();
@@ -102,28 +109,39 @@ public Banking() {
 		{
 			case "1" : 
 				this.interaction.display("Quelle est le nouveau prénom à entrer ?");
-				String newFirstname = this.interaction.readData();
-				this.client = Client (newFirstname,this.client.lastname,this.client.adress,this.client.zipCode,this.client.city,this.client.tel);
+				String newFirstName = this.interaction.readData();
+				this.client.firstname = newFirstName;
+				this.interaction.display("Le prénom a bien été changé en " + newFirstName);
             break;
 			case "2" : 
 				this.interaction.display("Quelle est le nouveau nom à entrer ?");
 				String newName = this.interaction.readData();
+				this.client.lastname = newName;
+				this.interaction.display("Le nom a bien été changé en " + newName);
             break; 
 			case "3" :
 				this.interaction.display("Quelle est la nouvelle adresse à entrer ?");
 				String newAdress = this.interaction.readData();
+				this.client.adress = newAdress;
+				this.interaction.display("L'adresse a bien été changée en " + newAdress);
             break;
 			case "4":
 				this.interaction.display("Quelle est le nouveau code postal à entrer ?");
-				String newZipCode = this.interaction.readData();
+				int newZipCode = Integer.parseInt(this.interaction.readData());
+				this.client.zipCode = newZipCode;
+				this.interaction.display("Le code postal a bien été changé en " + newZipCode);
             break;
 			case "5" :
 				this.interaction.display("Quelle est la nouvelle ville à entrer ?");
 				String newCity = this.interaction.readData();
+				this.client.city = newCity;
+				this.interaction.display("La ville a bien été changée en " + newCity);
             break;
 			case "6" :
 				this.interaction.display("Quelle est le nouveau téléphone à entrer ?");
 				String newTel = this.interaction.readData();
+				this.client.tel = newTel;
+				this.interaction.display("Le téléphone a bien été changé en " + newTel);
             break;
 			case "7" :
 				this.interaction.mainMenu();
@@ -136,7 +154,7 @@ public Banking() {
 	
 
 	public void consumptionCreditSimulation() {
-		
+		this.interaction.display("Désolées Jérémy, c'est trop pour nous !!!");
 	}
 		
 	public void manageMainMenu() {
