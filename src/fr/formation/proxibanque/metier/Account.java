@@ -9,4 +9,10 @@ public class Account {
 	public Account (String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.accountNumber);
+		return sb.toString();
+	}
 }

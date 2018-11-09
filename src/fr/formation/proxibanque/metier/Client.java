@@ -24,10 +24,12 @@ public class Client {
 		this.savingAccount = new Account(null);
 
 	}
-	public Client (String firstname, String lastname, Account currentAccount) {
+	public Client (String firstname, String lastname, Account currentAccount, Account savingAccount) {
 		this.firstname= firstname;
 		this.lastname = lastname;
 		this.currentAccount = new Account(null);
+		this.savingAccount = new Account(null);
+		
 	}
 	
 	public String toString() {
