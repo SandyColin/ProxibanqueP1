@@ -20,9 +20,8 @@ public class Client {
 		this.zipCode = zipCode;
 		this.city = city;
 		this.tel = tel;
-		this.currentAccount = new Account(this.currentAccount.accountNumber);
-		this.savingAccount = new Account(this.currentAccount.accountNumber);
-		
+		this.currentAccount = new Account(null);
+		this.savingAccount = new Account(null);
 
 	}
 	public Client (String firstname, String lastname, Account currentAccount) {
