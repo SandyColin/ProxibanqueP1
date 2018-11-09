@@ -29,6 +29,7 @@ public class Client {
 	 * @param savingAccount
 	 * @param balanceSavingAccount
 	 */
+
 	public Client(String firstname, String lastname, String adress, int zipCode, String city, 
 			String tel ) {
 		this.firstname = firstname;
@@ -37,20 +38,21 @@ public class Client {
 		this.zipCode = zipCode;
 		this.city = city;
 		this.tel = tel;
+
 		Account = new Account();
-//		this.currentAccount = new CurrentAccount();
-//		this.savingAccount = new SavingAccount();
-//		this.currentAccount.balance; 
+
 	}
 	
-//	public Client (String firstname, String lastname, Account currentAccount, Account savingAccount) {
-//		this.firstname= firstname;
-//		this.lastname = lastname;
-//		this.currentAccount = new Account();
-//		this.savingAccount = new Account();
-//		
-//	}
-//	
+		this.currentAccount = new Account();
+		this.savingAccount = new Account();
+
+	}
+	
+	/**
+	 * Méthode toString permettant de redéfinir la méthode par défaut de Java
+	 * @return String une chaine de caractères
+	 */
+
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.firstname);

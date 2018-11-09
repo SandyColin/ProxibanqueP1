@@ -3,6 +3,11 @@ package fr.formation.proxibanque.metier;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe permettant de caractériser une agence via ses différents attributs (dont une liste de conseillers)
+ * @author Adminl (Sarah Ourabah et Sandy Colin)
+ *
+ */
 public class Agency {
 	
 	public String id;
