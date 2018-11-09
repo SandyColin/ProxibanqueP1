@@ -13,22 +13,14 @@ public class Agency {
 	public Agency(String id, String creationDate) {
 		this.id = id;
 		this.creationDate = creationDate;
+		this.personalAdvisors = new ArrayList<>();
 		
-		//this.clients = new ArrayList<>();
-		//this.clients.add("Jean","Peplu","rue St Marc",93800, "Epinay", "032648972");
-		//this.clients.add("Jean","Fini","rue St 24",93800, "Villetaneuse", "032648972");
-		//this.clients.add("Jean","Part","rue Marc",93450, "Epinay", "032648972");
-		//this.clients.add("Jean","Bon","rue St Leu",93800, "Epinay", "032848972");
+		
+		this.personalAdvisors.add(new PersonalAdvisor ("12345"));
+		this.personalAdvisors.add(new PersonalAdvisor ("Jean1"));
+		this.personalAdvisors.add(new PersonalAdvisor ("Jean2"));
+		this.personalAdvisors.add(new PersonalAdvisor ("Jean3"));
 	}
 	
-	//public PersonalAdvisor (String id, List<Client> clients) {
-		//this(id);
-		//this.clients = clients;
-		
-		
-		
-		
-		
-	//}
-
+	
 }

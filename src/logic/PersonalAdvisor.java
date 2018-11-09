@@ -24,10 +24,10 @@ public class PersonalAdvisor {
 		this.clients = clients;
 		
 		this.clients = new ArrayList<>();
-		this.clients.add("Jean","Peplu","rue St Marc",93800, "Epinay", "032648972");
-		this.clients.add("Jean","Fini","rue St 24",93800, "Villetaneuse", "032648972");
-		this.clients.add("Jean","Part","rue Marc",93450, "Epinay", "032648972");
-		this.clients.add("Jean","Bon","rue St Leu",93800, "Epinay", "032848972");
+		this.clients.add(new Client("Jean","Peplu","rue St Marc",93800, "Epinay", "032648972"));
+		this.clients.add(new Client("Jean","Fini","rue St 24",93800, "Villetaneuse", "032648972"));
+		this.clients.add(new Client("Jean","Part","rue Marc",93450, "Epinay", "032648972"));
+		this.clients.add(new Client("Jean","Bon","rue St Leu",93800, "Epinay", "032848972"));
 		
 		
 		
