@@ -10,8 +10,7 @@ import java.util.Scanner;
  */
 public class Interaction {
 	/**
-	 * La classe interaction représente l'interface entre le programme et l'utilisateur.
-	 * Elle lui permet d'accéder aux différents traitements, à partir d'un menu principal.
+	 * La méthode readData() de type String permet de lire et de retourner les entrées clavier 
 	 * 
 	 * @author Adminl (Sarah Ourabah et Sandy Colin)
 	 *
@@ -21,7 +20,12 @@ public class Interaction {
 		return sc.nextLine();
 	}
 	
-	
+	/**
+	 * La méthode display() affiche dans la console un paramètre de type String et ne retourne aucune valeur.
+	 * 
+	 * @author Adminl (Sarah Ourabah et Sandy Colin)
+	 *
+	 */
 	public void display(String message) {
 		System.out.println(message);
 	}
@@ -29,7 +33,12 @@ public class Interaction {
 //	public void mainMenu0() {
 //		this.display("Bonjour employé ProxiBanque, pour vous identifier, entrez votre ID () :");
 //	}
-	
+	/**
+	 * La mainMenu() affiche dans la console un paramètre de type String et ne retourne aucune valeur.
+	 * 
+	 * @author Adminl (Sarah Ourabah et Sandy Colin)
+	 *
+	 */
 	public void mainMenu() {
 		this.display("Que faire ?");
 		this.display("1. Cr�er un client");

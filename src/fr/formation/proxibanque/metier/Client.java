@@ -1,6 +1,6 @@
 package fr.formation.proxibanque.metier;
 /**
- * Classe permettant de caractériser un client via ses différents attributs
+ * Classe permettant de caractï¿½riser un client via ses diffï¿½rents attributs
  * @author Adminl (Sarah Ourabah et Sandy Colin)
  *
  */
@@ -12,30 +12,45 @@ public class Client {
 	public int zipCode;
 	public String city;
 	public String tel;
-	public Account currentAccount;
-	public Account savingAccount;
+	public Account Account;
 	public CreditCard creditCard;
+	public double balanceCurrentAccount;
+	public double balanceSavingAccount;
 
+	/**
+	 * @param firstname
+	 * @param lastname
+	 * @param adress
+	 * @param zipCode
+	 * @param city
+	 * @param tel
+	 * @param currentAccount
+	 * @param balanceCurrentAccount
+	 * @param savingAccount
+	 * @param balanceSavingAccount
+	 */
 	public Client(String firstname, String lastname, String adress, int zipCode, String city, 
-			String tel, String currentAccount, String savingAccount) {
+			String tel ) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.adress = adress;
 		this.zipCode = zipCode;
 		this.city = city;
 		this.tel = tel;
-		this.currentAccount = new Account();
-		this.savingAccount = new Account();
-
-	}
-	public Client (String firstname, String lastname, Account currentAccount, Account savingAccount) {
-		this.firstname= firstname;
-		this.lastname = lastname;
-		this.currentAccount = new Account();
-		this.savingAccount = new Account();
-		
+		Account = new Account();
+//		this.currentAccount = new CurrentAccount();
+//		this.savingAccount = new SavingAccount();
+//		this.currentAccount.balance; 
 	}
 	
+//	public Client (String firstname, String lastname, Account currentAccount, Account savingAccount) {
+//		this.firstname= firstname;
+//		this.lastname = lastname;
+//		this.currentAccount = new Account();
+//		this.savingAccount = new Account();
+//		
+//	}
+//	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.firstname);

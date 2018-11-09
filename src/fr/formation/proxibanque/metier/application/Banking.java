@@ -15,7 +15,7 @@ public class Banking {
 	public AgencyNetwork agencyNetwork;
 	public boolean running = true;
 	public Client client;
-	public CurrentAccount currentAccount;
+//	public CurrentAccount currentAccount;
 	
 	
 public Banking() {
@@ -28,15 +28,15 @@ public Banking() {
 		this.agencyNetwork.agencies.add(new Agency ("81190", "02/03/1990"));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.add(new PersonalAdvisor("Banquier"));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sarah", "Ourabah",
-				 "avenue de la Paix", 75000, "Paris", "06.07.08.09.10", "C01", "S01"));
+				 "avenue de la Paix", 75000, "Paris", "06.07.08.09.10", "C01", 4005.0, "S01", 6659.55));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sandy","Colin",
-				"rue St Marc",93800, "Epinay", "03.26.48.97.21", "C02", "S02"));
+				"rue St Marc",93800, "Epinay", "03.26.48.97.21", "C02",10589.33, "S02", 5900.0));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sylvie","Ritter",
-				"rue St 24",93430, "Villetaneuse", "03.26.48.97.22", "C03", "S03"));
+				"rue St 24",93430, "Villetaneuse", "03.26.48.97.22", "C03", -5.0, "S03", 350.0));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Marc","Part",
-				"rue Marc",95600, "Eaubonne", "03.26.48.97.21", "C04", "S04"));
+				"rue Marc",95600, "Eaubonne", "03.26.48.97.21", "C04", 2005.5, "S04", 300.0));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Jean","Bon",
-				"rue St Leu",95560, "Baillet-en-France", "03.28.48.97.25", "C05", "S05"));
+				"rue St Leu",95560, "Baillet-en-France", "03.28.48.97.25", "C05", 500.0, "S05", 251.65));
 	}
 	
 	public void start() {
@@ -70,15 +70,19 @@ public Banking() {
 		String city = this.interaction.readData();
 		this.interaction.display("Entrez le t�l�phone :");
 		String tel = this.interaction.readData();
-		this.interaction.display("Entrez le numéro de compte:");
+		this.interaction.display("Entrez le numéro de compte courant:");
 		String currentAccount = this.interaction.readData();
-		this.interaction.display("Entrez le numéro de compte:");
+		this.interaction.display("Entrez le solde du compte courant:");
+		Double balanceCurrentAccount = Double.parseDouble(this.interaction.readData());
+		this.interaction.display("Entrez le numéro de compte épargne:");
 		String savingAccount = this.interaction.readData();
+		this.interaction.display("Entrez le solde du compte épargne:");
+		Double balanceSavingAccount = Double.parseDouble(this.interaction.readData());
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client
-				(lastname, firstname, adress, zipCode, city, tel, currentAccount, savingAccount));
+				(lastname, firstname, adress, zipCode, city, tel));
 		this.interaction.display(firstname + " " + lastname + " habitant "+adress + " "+zipCode + " "+city + 
 				" ayant pour num�ro"+ tel + ". " +" a bien �t� ajout�." + "\nNuméro de comptes associés: " 
-				+ currentAccount + " " + savingAccount);
+				+ currentAccount + " (solde: " + balanceCurrentAccount + "€)" + savingAccount + " (solde: " + balanceSavingAccount);
 		;
 	}
 	public void clientRemove() {
@@ -98,7 +102,7 @@ public Banking() {
     
 	public void bankTransfer() {
 		this.interaction.display("Les comptes associés au client sélectionné sont les suivants:");
-		this.interaction.display(this.currentAccount.clientNumber);
+		this.interaction.display(this.client.currentAccount.accountNumber);
 		
 	}
 	
