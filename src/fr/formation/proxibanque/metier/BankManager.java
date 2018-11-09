@@ -1,4 +1,4 @@
-package logic;
+package fr.formation.proxibanque.metier;
 
 public class BankManager {
 
