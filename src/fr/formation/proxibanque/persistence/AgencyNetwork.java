@@ -1,9 +1,9 @@
-package data;
+package fr.formation.proxibanque.persistence;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import logic.Agency;
+import fr.formation.proxibanque.metier.Agency;
 
 public class AgencyNetwork {
 	

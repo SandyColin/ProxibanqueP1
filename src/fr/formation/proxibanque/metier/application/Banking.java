@@ -1,17 +1,12 @@
-package logic.application;
+package fr.formation.proxibanque.metier.application;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
-import data.AgencyNetwork;
-import logic.Agency;
-import logic.BankManager;
-import logic.Client;
-import logic.PersonalAdvisor;
-import presentation.Interaction;
+import fr.formation.proxibanque.metier.Agency;
+import fr.formation.proxibanque.metier.Client;
+import fr.formation.proxibanque.metier.PersonalAdvisor;
+import fr.formation.proxibanque.persistence.AgencyNetwork;
+import fr.formation.proxibanque.presentation.Interaction;
 
 public class Banking {
 

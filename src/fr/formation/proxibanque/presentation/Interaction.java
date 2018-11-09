@@ -1,4 +1,4 @@
-package presentation;
+package fr.formation.proxibanque.presentation;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package logic;
+package fr.formation.proxibanque.metier;
 
 import java.util.ArrayList;
 import java.util.List;
