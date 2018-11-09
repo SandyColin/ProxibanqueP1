@@ -1,5 +1,9 @@
 package fr.formation.proxibanque.metier;
-
+/**
+ * Classe permettant de caractériser un client via ses différents attributs
+ * @author Adminl (Sarah Ourabah et Sandy Colin)
+ *
+ */
 public class Client {
 
 	public String firstname;

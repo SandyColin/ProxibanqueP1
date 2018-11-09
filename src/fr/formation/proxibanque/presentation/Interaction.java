@@ -44,7 +44,7 @@ public class Interaction {
         this.display("3. Revenir au menu précédent");
         this.display("4. Sortir du programme");
     }
-	public void changeMenu3() {
+	public void changeMenu() {
         this.display("Que voulez-vous modifier ?");
         this.display("1. Prénom");
         this.display("2. Nom");

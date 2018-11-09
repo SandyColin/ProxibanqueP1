@@ -103,7 +103,7 @@ public Banking() {
 		this.interaction.display("Désolées Jérémy, c'est trop pour nous !!!");
 	}
 	public void dataChange() {
-		this.interaction.changeMenu3();
+		this.interaction.changeMenu();
 		String modif = this.interaction.readData();
 		switch (modif)
 		{
