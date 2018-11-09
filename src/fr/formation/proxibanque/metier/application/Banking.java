@@ -4,6 +4,7 @@ import java.util.List;
 
 import fr.formation.proxibanque.metier.Agency;
 import fr.formation.proxibanque.metier.Client;
+import fr.formation.proxibanque.metier.CurrentAccount;
 import fr.formation.proxibanque.metier.PersonalAdvisor;
 import fr.formation.proxibanque.persistence.AgencyNetwork;
 import fr.formation.proxibanque.presentation.Interaction;
@@ -14,6 +15,7 @@ public class Banking {
 	public AgencyNetwork agencyNetwork;
 	public boolean running = true;
 	public Client client;
+	public CurrentAccount currentAccount;
 	
 	
 public Banking() {
@@ -96,11 +98,12 @@ public Banking() {
     
 	public void bankTransfer() {
 		this.interaction.display("Les comptes associÃ©s au client sÃ©lectionnÃ© sont les suivants:");
-		this.interaction.display(cl);
+		this.interaction.display(this.currentAccount.clientNumber);
+		
 	}
 	
 	public void housingCreditSimulation() {
-		this.interaction.display("Désolées Jérémy, c'est trop pour nous !!!");
+		this.interaction.display("Dï¿½solï¿½es Jï¿½rï¿½my, c'est trop pour nous !!!");
 	}
 	public void dataChange() {
 		this.interaction.changeMenu();
@@ -108,40 +111,40 @@ public Banking() {
 		switch (modif)
 		{
 			case "1" : 
-				this.interaction.display("Quelle est le nouveau prénom à entrer ?");
+				this.interaction.display("Quelle est le nouveau prï¿½nom ï¿½ entrer ?");
 				String newFirstName = this.interaction.readData();
 				this.client.firstname = newFirstName;
-				this.interaction.display("Le prénom a bien été changé en " + newFirstName);
+				this.interaction.display("Le prï¿½nom a bien ï¿½tï¿½ changï¿½ en " + newFirstName);
             break;
 			case "2" : 
-				this.interaction.display("Quelle est le nouveau nom à entrer ?");
+				this.interaction.display("Quelle est le nouveau nom ï¿½ entrer ?");
 				String newName = this.interaction.readData();
 				this.client.lastname = newName;
-				this.interaction.display("Le nom a bien été changé en " + newName);
+				this.interaction.display("Le nom a bien ï¿½tï¿½ changï¿½ en " + newName);
             break; 
 			case "3" :
-				this.interaction.display("Quelle est la nouvelle adresse à entrer ?");
+				this.interaction.display("Quelle est la nouvelle adresse ï¿½ entrer ?");
 				String newAdress = this.interaction.readData();
 				this.client.adress = newAdress;
-				this.interaction.display("L'adresse a bien été changée en " + newAdress);
+				this.interaction.display("L'adresse a bien ï¿½tï¿½ changï¿½e en " + newAdress);
             break;
 			case "4":
-				this.interaction.display("Quelle est le nouveau code postal à entrer ?");
+				this.interaction.display("Quelle est le nouveau code postal ï¿½ entrer ?");
 				int newZipCode = Integer.parseInt(this.interaction.readData());
 				this.client.zipCode = newZipCode;
-				this.interaction.display("Le code postal a bien été changé en " + newZipCode);
+				this.interaction.display("Le code postal a bien ï¿½tï¿½ changï¿½ en " + newZipCode);
             break;
 			case "5" :
-				this.interaction.display("Quelle est la nouvelle ville à entrer ?");
+				this.interaction.display("Quelle est la nouvelle ville ï¿½ entrer ?");
 				String newCity = this.interaction.readData();
 				this.client.city = newCity;
-				this.interaction.display("La ville a bien été changée en " + newCity);
+				this.interaction.display("La ville a bien ï¿½tï¿½ changï¿½e en " + newCity);
             break;
 			case "6" :
-				this.interaction.display("Quelle est le nouveau téléphone à entrer ?");
+				this.interaction.display("Quelle est le nouveau tï¿½lï¿½phone ï¿½ entrer ?");
 				String newTel = this.interaction.readData();
 				this.client.tel = newTel;
-				this.interaction.display("Le téléphone a bien été changé en " + newTel);
+				this.interaction.display("Le tï¿½lï¿½phone a bien ï¿½tï¿½ changï¿½ en " + newTel);
             break;
 			case "7" :
 				this.interaction.mainMenu();
@@ -154,7 +157,7 @@ public Banking() {
 	
 
 	public void consumptionCreditSimulation() {
-		this.interaction.display("Désolées Jérémy, c'est trop pour nous !!!");
+		this.interaction.display("Dï¿½solï¿½es Jï¿½rï¿½my, c'est trop pour nous !!!");
 	}
 		
 	public void manageMainMenu() {

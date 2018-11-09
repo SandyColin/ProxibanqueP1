@@ -24,15 +24,15 @@ public class Client {
 		this.zipCode = zipCode;
 		this.city = city;
 		this.tel = tel;
-		this.currentAccount = new Account(null);
-		this.savingAccount = new Account(null);
+		this.currentAccount = new Account();
+		this.savingAccount = new Account();
 
 	}
 	public Client (String firstname, String lastname, Account currentAccount, Account savingAccount) {
 		this.firstname= firstname;
 		this.lastname = lastname;
-		this.currentAccount = new Account(null);
-		this.savingAccount = new Account(null);
+		this.currentAccount = new Account();
+		this.savingAccount = new Account();
 		
 	}
 	

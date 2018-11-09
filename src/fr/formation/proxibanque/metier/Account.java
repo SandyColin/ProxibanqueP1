@@ -10,6 +10,11 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 	
+	public Account() {
+		this.accountNumber = null;
+		this.balance = 0;
+	}
+
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.accountNumber);
