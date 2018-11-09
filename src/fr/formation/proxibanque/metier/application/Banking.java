@@ -74,9 +74,9 @@ public Banking() {
 		String savingAccount = this.interaction.readData();
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client
 				(lastname, firstname, adress, zipCode, city, tel, currentAccount, savingAccount));
-		System.out.println(firstname + " " + lastname + " habitant "+adress + " "+zipCode + " "+city + 
-				" ayant pour num�ro"+ tel + " " + " a bien �t� ajout�.");
-
+		this.interaction.display(firstname + " " + lastname + " habitant "+adress + " "+zipCode + " "+city + 
+				" ayant pour num�ro"+ tel + ". " +" a bien �t� ajout�." + "\nNuméro de comptes associés: " 
+				+ currentAccount + " " + savingAccount);
 		;
 	}
 	public void clientRemove() {
@@ -96,7 +96,7 @@ public Banking() {
     
 	public void bankTransfer() {
 		this.interaction.display("Les comptes associés au client sélectionné sont les suivants:");
-		String accountTable[] = {};
+		this.interaction.display(cl);
 	}
 	
 	public void housingCreditSimulation() {
