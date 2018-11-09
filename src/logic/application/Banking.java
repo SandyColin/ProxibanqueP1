@@ -16,6 +16,8 @@ public class Banking {
 
 	public Interaction interaction ;
 	public AgencyNetwork agencyNetwork;
+	public boolean running = true;
+	
 	
 	
 	public void loadTestData() {
@@ -53,6 +55,7 @@ public class Banking {
 		String lastname = this.interaction.readData();
 		this.interaction.display("Entrez le prénom :");
 		String firstname = this.interaction.readData();
+
 		this.interaction.display("Entrez l'adresse :");
 		String adress = this.interaction.readData();
 		this.interaction.display("Entrez le code postal :");
@@ -64,6 +67,7 @@ public class Banking {
 		PersonalAdvisor personalAdvisor = new PersonalAdvisor();
 		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client(lastname, firstname, adress, zipCode, city, tel));
 		System.out.println(firstname + " " + lastname + " habitant "+adress + " "+zipCode + " "+city + " et ayant pour numéro"+ tel + " a bien été ajouté.");
+
 		;
 	}
 	public void clientRemove() {
@@ -123,11 +127,15 @@ public class Banking {
         }else if (userInput.equals("2")) {
                this.manageClient();
             } 
-		else {
-            this.interaction.display("Au revoir");
+		else if (userInput.equals("3")) {
+			this.exitProgram();
             }
 		}
 	
+	public void exitProgram() {
+		this.running = false;
+	}
+
 	private void manageClient() {
         this.interaction.mainMenu2();
         this.interaction.display("Entrez votre choix: ");
@@ -142,8 +150,10 @@ public class Banking {
                         this.creditSimulation();
                         } else if (userInput.equals("5")) {
                             this.clientRemove();
-                         } else {
-                             this.interaction.display("Au revoir");
+                         } else if (userInput.equals("6")) {
+                        	 this.manageMainMenu();
+                         } else if (userInput.equals("7")) {
+                     			this.exitProgram();
                          }
         
 }
@@ -155,8 +165,10 @@ public class Banking {
             this.housingCreditSimulation();    
             } else if (userInput.equals("2")) {
                 this.consumptionCreditSimulation();
-    } else {
-         this.interaction.display("Au revoir");
+            } else if (userInput.equals("3")) {
+                this.manageClient();
+            } else if (userInput.equals("4")) {
+     			this.exitProgram();
          }
     }
 	
