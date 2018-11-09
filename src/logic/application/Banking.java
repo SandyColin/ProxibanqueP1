@@ -11,7 +11,7 @@ import presentation.Interaction;
 
 public class Banking {
 
-	public Interaction interaction;
+	public Interaction interaction = new Interaction();
 	public AgencyNetwork agencyNetwork;
 	
 	

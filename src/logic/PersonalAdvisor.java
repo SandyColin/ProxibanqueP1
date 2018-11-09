@@ -16,6 +16,7 @@ public class PersonalAdvisor {
 	
 	public PersonalAdvisor (String id) {
 		this.id = id;
+		this.clients = new ArrayList<>();
 	}
 	
 	public PersonalAdvisor (String id, List<Client> clients) {
