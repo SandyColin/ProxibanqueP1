@@ -20,21 +20,13 @@ public class Banking {
 	public boolean running = true;
 	public Client client;
 	
+	
 public Banking() {
 	this.interaction = new Interaction();
 	this.agencyNetwork = new AgencyNetwork();
 }
 	
 	public void loadTestData() {
-		//this.agencyNetwork = new AgencyNetwork();
-		//Agency	agency =new Agency ("81190", "02/03/1990");
-		//agency.bankManager = new BankManager("SS");
-		//agency.personalAdvisors = new ArrayList<>();
-		//PersonalAdvisor personalAdvisor = new PersonalAdvisor("Banquier");
-		//personalAdvisor.clients.add(new Client("Sarah", "Ourabah", "avenue de la Paix", 75000, "Paris", "06.07.08.09.10"));
-		//agency.personalAdvisors.add(personalAdvisor);
-		//this.agencyNetwork.agencies.add(agency);
-		
 		
 		this.agencyNetwork.agencies.add(new Agency ("81190", "02/03/1990"));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.add(new PersonalAdvisor("Banquier"));
@@ -50,13 +42,13 @@ public Banking() {
 		while (this.running) {
 		this.manageMainMenu();
 		}
-		}
+	}
 	
 	public void clientDataReader() {
 		
 	}
 	public void clientCreation() {
-		this.loadTestData();
+		
 		this.interaction.display("Entrez le nom :");
 		String lastname = this.interaction.readData();
 		this.interaction.display("Entrez le pr�nom :");
@@ -83,20 +75,12 @@ public Banking() {
 		if (sup.equals("O")) {
 			clients.remove(this.client);
 		}
+		else {
+			this.manageMainMenu();
+		}
 		
-		//if (client.currentAccount.equals(Account)) {
-		//this.deleteAccount();}
-       // this.unableCreditCard();
     }
     
-    public void deleteAccount() {
-            
-    }
-    
-    public void unableCreditCard() {
-        
-    }
-	
 	public void bankTransfer() {
 		this.interaction.display("Les comptes associés au client sélectionné sont les suivants:");
 		String accountTable[] = {};
@@ -106,8 +90,42 @@ public Banking() {
 		
 	}
 	public void dataChange() {
+		this.interaction.changeMenu3();
+		String modif = this.interaction.readData();
+		switch (modif)
+		{
+			case "1" : 
+				this.interaction.display("Quelle est le nouveau pr�nom � entrer ?");
+				String newFirstname = this.interaction.readData();
+            break;
+			case "2" : 
+				this.interaction.display("Quelle est le nouveau nom � entrer ?");
+				String newName = this.interaction.readData();
+            break; 
+			case "3" :
+				this.interaction.display("Quelle est la nouvelle adresse � entrer ?");
+				String newAdress = this.interaction.readData();
+            break;
+			case "4":
+				this.interaction.display("Quelle est le nouveau code postal � entrer ?");
+				String newZipCode = this.interaction.readData();
+            break;
+			case "5" :
+				this.interaction.display("Quelle est la nouvelle ville � entrer ?");
+				String newCity = this.interaction.readData();
+            break;
+			case "6" :
+				this.interaction.display("Quelle est le nouveau t�l�phone � entrer ?");
+				String newTel = this.interaction.readData();
+            break;
+			case "7" :
+				this.interaction.mainMenu();
+			break;
+		}
 		
 	}
+		
+	
 	public void consumptionCreditSimulation() {
 		
 	}
@@ -132,9 +150,10 @@ public Banking() {
 	public void displayListClient() {
 		PersonalAdvisor personalAdvisor = this.agencyNetwork.agencies.get(0).personalAdvisors.get(0);
 		List<Client> clients = personalAdvisor.clients;
+		
 		for (Client client : clients) {
 			int index = clients.indexOf(client);
-			this.interaction.display(index + " - "+ client.toString());}
+		this.interaction.display(index + " - "+ client.toString());}
 		this.interaction.display("Tapez le numéro associé au client concerné");
 	    int userInputIndex = Integer.parseInt(this.interaction.readData());
 	    this.client = clients.get(userInputIndex);
