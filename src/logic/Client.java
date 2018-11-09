@@ -12,14 +12,18 @@ public class Client {
 	public Account savingAccount;
 	public CreditCard creditCard;
 
-	public Client(String firstname, String lastname, String adress, int zipCode, String city, String tel) {
+	public Client(String firstname, String lastname, String adress, int zipCode, String city, 
+			String tel, String currentAccount, String savingAccount) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.adress = adress;
 		this.zipCode = zipCode;
 		this.city = city;
 		this.tel = tel;
+		this.currentAccount = new Account(this.currentAccount.accountNumber);
+		this.savingAccount = new Account(this.currentAccount.accountNumber);
 		
+
 	}
 	public Client (String firstname, String lastname, Account currentAccount) {
 		this.firstname= firstname;
