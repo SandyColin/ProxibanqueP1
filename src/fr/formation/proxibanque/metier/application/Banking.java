@@ -25,11 +25,16 @@ public Banking() {
 		
 		this.agencyNetwork.agencies.add(new Agency ("81190", "02/03/1990"));
 		this.agencyNetwork.agencies.get(0).personalAdvisors.add(new PersonalAdvisor("Banquier"));
-		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sarah", "Ourabah", "avenue de la Paix", 75000, "Paris", "06.07.08.09.10"));
-		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sandy","Colin","rue St Marc",93800, "Epinay", "032648972"));
-		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sylvie","Ritter","rue St 24",93430, "Villetaneuse", "032648972"));
-		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Marc","Part","rue Marc",95600, "Eaubonne", "032648972"));
-		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Jean","Bon","rue St Leu",95560, "Baillet-en-France", "032848972"));
+		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sarah", "Ourabah",
+				 "avenue de la Paix", 75000, "Paris", "06.07.08.09.10", "C01", "S01"));
+		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sandy","Colin",
+				"rue St Marc",93800, "Epinay", "032648972", "C02", "S02"));
+		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Sylvie","Ritter",
+				"rue St 24",93430, "Villetaneuse", "032648972", "C03", "S03"));
+		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Marc","Part",
+				"rue Marc",95600, "Eaubonne", "032648972", "C04", "S04"));
+		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client("Jean","Bon",
+				"rue St Leu",95560, "Baillet-en-France", "032848972", "C05", "S05"));
 	}
 	
 	public void start() {
@@ -56,8 +61,14 @@ public Banking() {
 		String city = this.interaction.readData();
 		this.interaction.display("Entrez le t�l�phone :");
 		String tel = this.interaction.readData();
-		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client(lastname, firstname, adress, zipCode, city, tel));
-		System.out.println(firstname + " " + lastname + " habitant "+adress + " "+zipCode + " "+city + " et ayant pour num�ro"+ tel + " a bien �t� ajout�.");
+		this.interaction.display("Entrez le numéro de compte:");
+		String currentAccount = this.interaction.readData();
+		this.interaction.display("Entrez le numéro de compte:");
+		String savingAccount = this.interaction.readData();
+		this.agencyNetwork.agencies.get(0).personalAdvisors.get(0).clients.add(new Client
+				(lastname, firstname, adress, zipCode, city, tel, currentAccount, savingAccount));
+		System.out.println(firstname + " " + lastname + " habitant "+adress + " "+zipCode + " "+city + 
+				" ayant pour num�ro"+ tel + " " + " a bien �t� ajout�.");
 
 		;
 	}
