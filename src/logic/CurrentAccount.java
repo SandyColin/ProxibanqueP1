@@ -1,11 +1,19 @@
 package logic;
 
 public class CurrentAccount extends Account{
+	
+	public int OVERDRAFT_PROTECTION = 1000;
 
 	public CurrentAccount(String accountNumber) {
 		super(accountNumber);
 		
 	}
+	
+	public CurrentAccount(String accountNumber, double balance) {
+		super(accountNumber);
+		this.balance = balance;
+	}
+	
 
-	public int overdraftProtection;
+	
 }

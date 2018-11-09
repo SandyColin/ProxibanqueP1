@@ -90,8 +90,7 @@ public Banking() {
     }
     
     public void deleteAccount() {
-        
-        
+            
     }
     
     public void unableCreditCard() {
@@ -99,7 +98,8 @@ public Banking() {
     }
 	
 	public void bankTransfer() {
-		
+		this.interaction.display("Les comptes associés au client sélectionné sont les suivants:");
+		String accountTable[] = {};
 	}
 	
 	public void housingCreditSimulation() {
@@ -111,8 +111,7 @@ public Banking() {
 	public void consumptionCreditSimulation() {
 		
 	}
-	
-	
+		
 	public void manageMainMenu() {
 		this.interaction.mainMenu();
         this.interaction.display("Entrez votre choix.");
@@ -160,8 +159,6 @@ public Banking() {
 	                      } else if (userInput.equals("7")) {
 	                  			this.exitProgram();
 	                      }
-
-			
 		}
 	
         
