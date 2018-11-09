@@ -11,7 +11,7 @@ import presentation.Interaction;
 
 public class Banking {
 
-	public Interaction interaction = new Interaction();
+	public Interaction interaction ;
 	public AgencyNetwork agencyNetwork;
 	
 	
@@ -87,6 +87,7 @@ public class Banking {
 	}
 	
 	public void manageMainMenu() {
+		this.interaction = new Interaction();
 		this.interaction.mainMenu();
         this.interaction.display("Entrez votre choix.");
         String userInput = this.interaction.readData();
